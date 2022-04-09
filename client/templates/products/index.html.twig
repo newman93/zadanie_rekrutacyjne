@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductsController!{% endblock %}
+
+{% block body %}
+
+<div>
+    <a href="{{ path('app_index') }}">Wszystkie</a> | 
+    <a href="{{ path('app_stock') }}">Na stanie</a> | 
+    <a href="{{ path('app_lack') }}">Brak</a> | 
+    <a href="{{ path('app_more') }}">Więcej niż 5</a> |
+    <a href="{{ path('app_add') }}">Dodaj</a>
+
+    <br /> <br />
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>amount</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.amount }}</td>
+                    <td><a href="{{ path('app_edit', {id: product.id}) }}">Edytuj</a> | <a href="{{ path('app_delete', {id: product.id}) }}">Usuń</a></td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+<style>
+    table, th, td {
+        border: 1px solid;
+    }
+</style>
+{% endblock %}

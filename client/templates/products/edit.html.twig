@@ -1,0 +1,8 @@
+    <h1>Edytuj produkt</h1>
+    <form method="POST">
+        <label for="name">Nazwa</label>
+        <input name="name" type="text" value="{{ product.name }}">
+        <label for="amount">Ilość</label>
+        <input name="amount" type="number" value="{{ product.amount }}">
+        <button type="submit">Edytuj</button>
+    </form>

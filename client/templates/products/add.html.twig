@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductsController!{% endblock %}
+
+{% block body %}
+    <h1>Dodaj produkt</h1>
+    <form method="POST">
+        <label for="name">Nazwa</label>
+        <input name="name" type="text">
+        <label for="amount">Ilość</label>
+        <input name="amount" type="number">
+        <button type="submit">Dodaj</button>
+    </form>
+{% endblock %}
